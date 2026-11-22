@@ -3,7 +3,7 @@
 Personal portfolio for Cody Hoang: a static site with a fixed sidebar on desktop and a single
 scrolling column on phones, listing about, projects, and experience.
 
-**Live:** _URL added after the first Vercel deploy_
+**Live:** https://codyhoang.vercel.app
 
 ## Why Astro
 
