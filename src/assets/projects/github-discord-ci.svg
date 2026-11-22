@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 400" width="900" height="400" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, sans-serif">
+  <rect width="900" height="400" fill="#16181c"/>
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0 0 10 5 0 10z" fill="#8b8f98"/>
+    </marker>
+  </defs>
+  <g stroke="#8b8f98" stroke-width="2" fill="none" marker-end="url(#a)">
+    <path d="M170 150h44"/><path d="M366 150h44"/><path d="M562 150h44"/>
+    <path d="M686 182v54"/><path d="M290 182v54"/><path d="M486 182v54"/>
+  </g>
+  <g font-size="17" text-anchor="middle">
+    <rect x="30" y="118" width="140" height="64" rx="10" fill="#22252b" stroke="#3a3e46"/>
+    <text x="100" y="146" fill="#ece8e1" font-weight="600">GitHub</text>
+    <text x="100" y="168" fill="#a8a49c" font-size="14">push event</text>
+
+    <rect x="214" y="118" width="152" height="64" rx="10" fill="#22252b" stroke="#3a3e46"/>
+    <text x="290" y="146" fill="#ece8e1" font-weight="600">HMAC-SHA256</text>
+    <text x="290" y="168" fill="#a8a49c" font-size="14">constant-time check</text>
+
+    <rect x="410" y="118" width="152" height="64" rx="10" fill="#22252b" stroke="#3a3e46"/>
+    <text x="486" y="146" fill="#ece8e1" font-weight="600">Dedupe</text>
+    <text x="486" y="168" fill="#a8a49c" font-size="14">by delivery ID</text>
+
+    <rect x="606" y="118" width="160" height="64" rx="10" fill="#2a2418" stroke="#f0b35a"/>
+    <text x="686" y="146" fill="#f0b35a" font-weight="600">202 to GitHub</text>
+    <text x="686" y="168" fill="#a8a49c" font-size="14">then dispatch async</text>
+
+    <rect x="214" y="236" width="152" height="52" rx="10" fill="#1d1b1f" stroke="#5a3a3a"/>
+    <text x="290" y="267" fill="#e8a3a3" font-size="15">bad sig → 401</text>
+
+    <rect x="410" y="236" width="152" height="52" rx="10" fill="#1d1b1f" stroke="#3a3e46"/>
+    <text x="486" y="267" fill="#a8a49c" font-size="15">seen → 200, skip</text>
+
+    <rect x="606" y="236" width="160" height="52" rx="10" fill="#1b2122" stroke="#5865f2"/>
+    <text x="686" y="267" fill="#b9befc" font-size="15">Discord embed</text>
+  </g>
+  <text x="30" y="70" fill="#ece8e1" font-size="22" font-weight="600">github-discord-ci</text>
+  <text x="30" y="352" fill="#8b8f98" font-size="14">On Discord failure, the delivery ID is evicted so a manual redelivery still posts.</text>
+</svg>
