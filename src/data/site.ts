@@ -84,7 +84,10 @@ export const experience: Job[] = [
   {
     role: "Software Engineering Intern",
     org: "BlackDogData (startup)",
-    dates: "Current",
+    dates: "Jun 2026 – Present",
+    description:
+      "Building an AI assistant that lets buyers on the company's data marketplace assemble custom datasets in plain English, and a privacy-filtered data-upload flow for its iOS app. Full-stack TypeScript (React, Node/Express) and native Swift.",
+    tech: ["TypeScript", "React", "Node.js", "Express", "MySQL", "Claude API", "Swift", "SwiftUI"],
   },
 ];
 
