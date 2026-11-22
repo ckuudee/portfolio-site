@@ -1,0 +1,46 @@
+---
+import { Image } from "astro:assets";
+import type { Project } from "../data/site";
+
+interface Props {
+  project: Project;
+}
+const { project } = Astro.props;
+const headingId = `project-${project.name}`;
+---
+
+<article class="project" aria-labelledby={headingId}>
+  <div class="project-media" data-demo={project.video ? "" : undefined}>
+    <Image
+      src={project.image.src}
+      alt={project.image.alt}
+      widths={[480, 800, 1200]}
+      sizes="(min-width: 1024px) 560px, 100vw"
+      loading="lazy"
+      decoding="async"
+    />
+    {
+      project.video && (
+        <video muted loop playsinline preload="none" aria-hidden="true" tabindex="-1">
+          {project.video.webm && <source data-src={project.video.webm} type="video/webm" />}
+          {project.video.mp4 && <source data-src={project.video.mp4} type="video/mp4" />}
+        </video>
+      )
+    }
+  </div>
+  <div class="project-body">
+    <h3 id={headingId}>
+      <a href={project.repo} target="_blank" rel="noopener noreferrer">
+        {project.name}<span class="visually-hidden"> (GitHub, opens in a new tab)</span>
+        <span aria-hidden="true" class="arrow">↗</span>
+      </a>
+    </h3>
+    <p>{project.summary}</p>
+    <ul class="highlights">
+      {project.highlights.map((h) => <li>{h}</li>)}
+    </ul>
+    <ul class="tags" aria-label="Technologies">
+      {project.tech.map((t) => <li>{t}</li>)}
+    </ul>
+  </div>
+</article>

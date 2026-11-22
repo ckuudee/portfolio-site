@@ -1,0 +1,368 @@
+:root {
+  --bg: #111214;
+  --surface: #1a1c20;
+  --border: #2c2f35;
+  --text: #ece8e1;
+  --muted: #a8a49c;
+  --accent: #f0b35a;
+  --accent-soft: rgba(240, 179, 90, 0.12);
+  --font: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  color-scheme: dark;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+  }
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--muted);
+  font-family: var(--font);
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+h1,
+h2,
+h3 {
+  color: var(--text);
+  line-height: 1.25;
+  margin: 0;
+}
+
+p {
+  margin: 0 0 1rem;
+}
+
+a {
+  color: var(--text);
+  text-decoration-color: var(--accent);
+  text-underline-offset: 3px;
+}
+a:hover {
+  color: var(--accent);
+}
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 3px;
+}
+main:focus {
+  outline: none;
+}
+
+img,
+video {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -4rem;
+  z-index: 10;
+  padding: 0.5rem 1rem;
+  background: var(--accent);
+  color: #111;
+  font-weight: 600;
+  border-radius: 4px;
+}
+.skip-link:focus {
+  top: 1rem;
+  color: #111;
+}
+
+/* ---------- Layout ---------- */
+
+.layout {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.sidebar {
+  padding: 3.5rem 0 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+main {
+  padding-bottom: 3rem;
+}
+
+section {
+  scroll-margin-top: 1.5rem;
+  padding-top: 3rem;
+}
+
+@media (min-width: 1024px) {
+  .layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr);
+    gap: 4rem;
+    padding: 0 3rem;
+  }
+  .sidebar {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    padding: 6rem 0;
+    justify-content: space-between;
+  }
+  main {
+    padding-top: 3rem;
+  }
+  section {
+    scroll-margin-top: 6rem;
+  }
+  .section-title {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+  }
+}
+
+/* ---------- Sidebar ---------- */
+
+.name {
+  font-size: clamp(2.25rem, 6vw, 3.25rem);
+  letter-spacing: -0.02em;
+}
+.role {
+  margin: 0.5rem 0 0;
+  color: var(--accent);
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+.tagline {
+  margin-top: 1rem;
+  max-width: 22rem;
+}
+
+.section-nav {
+  display: none;
+}
+@media (min-width: 1024px) {
+  .section-nav {
+    display: block;
+    margin-top: 3.5rem;
+  }
+}
+.section-nav ul {
+  list-style: none;
+}
+.section-nav a {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.6rem 0;
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+.nav-line {
+  display: inline-block;
+  width: 2rem;
+  height: 1px;
+  background: currentColor;
+  transition: width 0.2s ease;
+}
+.section-nav a:hover,
+.section-nav a[aria-current] {
+  color: var(--text);
+}
+.section-nav a:hover .nav-line,
+.section-nav a[aria-current] .nav-line {
+  width: 4rem;
+  background: var(--accent);
+}
+
+.social {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.25rem;
+  font-family: var(--mono);
+  font-size: 0.9rem;
+}
+.social a {
+  display: inline-block;
+  padding: 0.25rem 0;
+}
+
+/* ---------- Sections ---------- */
+
+.section-title {
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 1.25rem;
+}
+
+.project-list {
+  display: grid;
+  gap: 3rem;
+}
+
+.project {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.project-media {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface);
+}
+.project-media img {
+  width: 100%;
+}
+.project-media video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+.project-media.playing video {
+  opacity: 1;
+}
+
+.project h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+.project h3 a {
+  text-decoration: none;
+}
+.project h3 a:hover {
+  text-decoration: underline;
+}
+.arrow {
+  display: inline-block;
+  margin-left: 0.3rem;
+  font-size: 0.9em;
+  transition: transform 0.15s ease;
+}
+.project h3 a:hover .arrow {
+  transform: translate(2px, -2px);
+}
+
+.highlights {
+  padding-left: 1.1rem;
+  margin-bottom: 1rem;
+}
+.highlights li {
+  margin-bottom: 0.4rem;
+}
+.highlights li::marker {
+  color: var(--accent);
+}
+
+.tags {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.tags li {
+  padding: 0.2rem 0.7rem;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-size: 0.78rem;
+  font-weight: 500;
+}
+
+.more {
+  margin-top: 2rem;
+  font-weight: 600;
+}
+
+.timeline {
+  list-style: none;
+  display: grid;
+  gap: 2rem;
+}
+.job {
+  display: grid;
+  gap: 0.25rem;
+}
+@media (min-width: 640px) {
+  .job {
+    grid-template-columns: 8rem 1fr;
+    gap: 1.5rem;
+  }
+}
+.job-dates {
+  margin: 0;
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding-top: 0.2rem;
+}
+.job h3 {
+  font-size: 1.05rem;
+  margin-bottom: 0.35rem;
+}
+.job-org {
+  color: var(--muted);
+  font-weight: 500;
+}
+
+.footer {
+  margin-top: 4rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+  font-size: 0.85rem;
+}
