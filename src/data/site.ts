@@ -20,7 +20,7 @@ export const site = {
 export const about: string[] = [
   "I'm a computer science senior at the University of Washington, graduating in June 2027, and I'm looking for a full-time entry-level software engineering role.",
   "I'm drawn to backend work where the hard part is the failure cases: crashed workers, retries, duplicate deliveries. My recent projects are built around those cases and tested by trying to break them.",
-  "I'm currently a software engineering intern at BlackDogData, a startup.",
+  "I'm currently a software engineering intern at a startup called BlackDogData.",
 ];
 
 export interface Project {
