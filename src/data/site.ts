@@ -20,7 +20,7 @@ export const site = {
 export const about: string[] = [
   "I'm a computer science senior at the University of Washington, graduating in June 2027, and I'm looking for a full-time entry-level software engineering role.",
   "I'm drawn to backend work where the hard part is the failure cases: crashed workers, retries, duplicate deliveries. My recent projects are built around those cases and tested by trying to break them.",
-  "I'm currently a software engineering intern at BlackDogData, a startup.",
+  "I'm currently a software engineering intern at a startup called BlackDogData.",
 ];
 
 export interface Project {
@@ -86,12 +86,12 @@ export const experience: Job[] = [
     org: "BlackDogData (startup)",
     dates: "Apr 2026 – Present",
     description:
-      "Building an AI assistant that lets buyers on the company's data marketplace assemble custom datasets in plain English, and a privacy-filtered data-upload flow for its iOS app. Full-stack TypeScript (React, Node/Express) and native Swift.",
+      "Built an AI assistant that lets buyers on the company's data marketplace assemble custom datasets in plain English, and a privacy-filtered data-upload flow for its iOS app. Full-stack TypeScript (React, Node/Express) and native Swift.",
     tech: ["TypeScript", "React", "Node.js", "Express", "MySQL", "Claude API", "Swift", "SwiftUI"],
   },
 ];
 
 export const education = {
   school: "University of Washington, Seattle",
-  detail: "Computer Science · Expected June 2027",
+  detail: "Computer Science · Expected graduation June 2027",
 };
