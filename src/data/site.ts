@@ -93,5 +93,5 @@ export const experience: Job[] = [
 
 export const education = {
   school: "University of Washington, Seattle",
-  detail: "Computer Science · Expected June 2027",
+  detail: "Computer Science · Expected graduation June 2027",
 };
